@@ -1,9 +1,9 @@
-type Add = {
-  (a: number, b: number): number;
-  (a: number, b: string): number;
-};
+type SuperPrint = (arr: any[]) => any;
 
-const add: Add = (a, b) => {
-  if (typeof b === "string") return a;
-  return a + b;
-};
+const superPrint: SuperPrint = (a) => a[0];
+
+const a = superPrint([6, 5, 4]);
+const b = superPrint([6, true, "a"]);
+const c = superPrint(["6", true, "a", 6, 5]);
+
+a.toUpperCase();
