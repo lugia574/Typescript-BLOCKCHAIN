@@ -7,3 +7,15 @@ const b = superPrint([6, true, "a"]);
 const c = superPrint(["6", true, "a", 6, 5]);
 
 a.toUpperCase();
+
+type Player<E> = {
+  name: string;
+  extraInfo: E;
+};
+
+const nico: Player<{ favFood: string }> = {
+  name: "nico",
+  extraInfo: {
+    favFood: "kakao",
+  },
+};
