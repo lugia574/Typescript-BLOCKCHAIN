@@ -19,3 +19,21 @@ const nico: Player<{ favFood: string }> = {
     favFood: "kakao",
   },
 };
+
+abstract class User {
+  constructor(
+    private firstName: String,
+    private lastName: String,
+    public nickName: string
+  ) {}
+
+  getFullName() {
+    return `${this.firstName}  ${this.lastName}`;
+  }
+}
+
+class Player1 extends User {}
+
+const ex = new Player1("ex", "las", "엑스");
+
+ex.nickName;
