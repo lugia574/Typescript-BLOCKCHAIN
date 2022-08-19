@@ -16,3 +16,26 @@ class Player2 implements User2 {
     return `${name} Hi.. hahaha.. my name is ${this.fullName()}`;
   }
 }
+
+interface SStorage<T> {
+  [key: string]: T;
+}
+
+class LocalStorage<T> {
+  private storage: SStorage<T> = {};
+
+  set(key: string, value: T) {
+    this.storage[key] = value;
+  }
+  remove(key: string) {
+    delete this.storage[key];
+  }
+  get(key: string): T {
+    return this.storage[key];
+  }
+  claer() {
+    this.storage = {};
+  }
+}
+
+const stringsStorage = new LocalStorage<string>();
