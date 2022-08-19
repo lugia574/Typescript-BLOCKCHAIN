@@ -2,9 +2,8 @@
   "name": "typescript-beginner",
   "version": "1.0.0",
   "description": "이것은 Typescript를 배우는것을 기록하기 위한 깃",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -16,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lugia574/Typescript-beginner/issues"
   },
-  "homepage": "https://github.com/lugia574/Typescript-beginner#readme"
+  "homepage": "https://github.com/lugia574/Typescript-beginner#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
