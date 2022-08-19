@@ -1,3 +1,4 @@
+"use strict";
 class Black {
     constructor(data) {
         this.data = data;
