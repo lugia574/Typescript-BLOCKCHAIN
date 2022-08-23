@@ -37,3 +37,13 @@ class Player1 extends User {}
 const ex = new Player1("ex", "las", "엑스");
 
 ex.nickName;
+
+const test23: boolean[] = [];
+
+function playerMaker(name: string): string[] {
+  return [];
+}
+
+const name23 = (): string[] => {
+  return [];
+};
