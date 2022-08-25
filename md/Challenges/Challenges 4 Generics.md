@@ -35,3 +35,11 @@ const arr = [1, 2, 3, 4, "5", "@@", true];
 console.log(last(arr), "이것은 last");
 console.log(prepend(arr, 2), "이것은 prepend");
 ```
+
+대충 폼은 이렇고
+
+리액트로 좀 이쁘게 꾸밀라고 했는데
+
+좀 귀찮아서 걍 냄
+
+useStete 랑 쓸려고 하니까 좀 걸리네
