@@ -1,4 +1,4 @@
-# # TypeScript Challenges
+# TypeScript Challenges
 
 오늘의 강의: Typescript로 블록체인 만들기: From #3.0 to #3.1
 

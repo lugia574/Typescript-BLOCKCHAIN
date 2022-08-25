@@ -47,3 +47,23 @@ function playerMaker(name: string): string[] {
 const name23 = (): string[] => {
   return [];
 };
+
+type last = {
+  <T>(arr: T[]): T;
+};
+type prepend = {
+  <T>(arr: T[], item: T): T[];
+};
+
+const last: last = (a) => a[a.length - 1];
+
+const prepend: prepend = (arr, item) => {
+  arr.unshift(item);
+
+  return arr;
+};
+
+const arr = [1, 2, 3, 4, "5", "@@", true];
+
+console.log(last(arr), "이것은 last");
+console.log(prepend(arr, 2), "이것은 prepend");
