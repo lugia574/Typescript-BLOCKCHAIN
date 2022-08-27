@@ -43,3 +43,38 @@ console.log(prepend(arr, 2), "이것은 prepend");
 좀 귀찮아서 걍 냄
 
 useStete 랑 쓸려고 하니까 좀 걸리네
+
+```ts
+// Last
+
+type Last = <T>(items: T[]) => T;
+
+const last: Last = (items) => items[items.length - 1];
+
+const lastItem = last([1, 2, 3, 4, 5]);
+
+console.log(lastItem);
+
+// Prepend
+
+type Prepend = <T>(items: T[], item: T) => T[];
+
+const prepend: Prepend = (items, item) => [item, ...items];
+
+const items = [1, 2, 3, 4, 5];
+
+const newItems = prepend(items, 0);
+
+console.log(newItems);
+```
+
+정답은 이렇단다
+
+```ts
+  <T>(arr: T[], item: T): T[];
+  <T>(items: T[], item: T) => T[];
+```
+
+이거 차이가 있나? 없는거 같은데
+
+그럼 뭐 맞는듯
