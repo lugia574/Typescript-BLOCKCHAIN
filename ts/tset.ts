@@ -106,4 +106,7 @@ class Dict {
     return console.log(this.words);
   }
   //count: dict 단어들의 총 count 를 리턴함.
+  count() {
+    return this.words.length;
+  }
 }
