@@ -51,6 +51,9 @@ class Dict {
   }
   //update: 단어를 업데이트 함.
   update(key: string, summry: string) {
+    if (this.words[key] === undefined) {
+      return;
+    }
     this.words[key] = summry;
   }
   //showAll: dictionary 의 단어를 모두 프린트함.
