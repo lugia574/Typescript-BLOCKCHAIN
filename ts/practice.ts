@@ -39,3 +39,10 @@ class LocalStorage<T> {
 }
 
 const stringsStorage = new LocalStorage<string>();
+
+//LocalStorageAPI >> setItem, getItem, clearItem, clear
+
+interface LocalStorageAPI {}
+
+// GeolocationAPI >> getCurrentPosition, watchPosition, clearWatch
+interface GeolocationAPI {}
