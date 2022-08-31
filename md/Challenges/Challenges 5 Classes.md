@@ -29,7 +29,7 @@ class Dict {
   }
 
   // add: 단어를 추가함.
-  add(word: Word) {
+  add(word: Words) {
     if (this.words[word.term] === undefined) {
       // undefined 는 사전에 없는가를 묻는거
       this.words[word.term] = word.def;

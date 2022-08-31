@@ -43,6 +43,83 @@ Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation
 ## Storage API 구현
 
 ```ts
-interface LocalStorageAPI {}
-interface GeolocationAPI {}
+interface LocalStorageStorage<T> {
+  [key: string]: T;
+}
+
+//LocalStorageAPI >> setItem, getItem, clearItem, clear
+interface LocalStorageAPI<T> {
+  setItem(key: string, value: T): void;
+
+  getItem(key: string): T;
+
+  clearItem(key: string): void;
+
+  clear(): void;
+}
+
+// GeolocationAPI >> getCurrentPosition, watchPosition, clearWatch
+interface GeolocationAPI<T> {
+  getCurrentPosition(success: T, error?: T, options?: T): string;
+
+  watchPosition(success: T, error?: T, options?: T): string;
+
+  clearWatch(id: string): void;
+}
+
+class LocalStorageAPI<T> implements LocalStorageAPI<T> {
+  private storage: LocalStorageStorage<T> = {};
+
+  setItem(key: string, value: T): void {
+    if (this.storage[key] === undefined) {
+      this.storage[key] = value;
+    }
+  }
+
+  getItem(key: string) {
+    return this.storage[key];
+  }
+
+  clearItem(key: string): void {
+    delete this.storage[key];
+  }
+
+  clear(): void {
+    this.storage = {};
+  }
+}
+
+class GeolocationAPI<T> implements GeolocationAPI<T> {
+  getCurrentPosition(
+    success: T,
+    error?: T | undefined,
+    options?: T | undefined
+  ): string {
+    return "test";
+  }
+
+  watchPosition(
+    success: T,
+    error?: T | undefined,
+    options?: T | undefined
+  ): string {
+    return "test";
+  }
+
+  clearWatch(id: string): void {}
+}
 ```
+
+대충 여기까지 했는데
+
+이렇게 하는거 맞나?
+
+흠 흠 흠
+
+솔직히 GeolocationAPI 는 어떻게 하라는건지 잘 감이 안옴
+
+storage 야 저번에도 만들어 봤으니까 걍 대충 했는데
+
+GeolocationAPI 이건 뭐 어쩌라는건지
+
+모르겠다 우선 내고 보자

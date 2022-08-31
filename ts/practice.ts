@@ -40,9 +40,68 @@ class LocalStorage<T> {
 
 const stringsStorage = new LocalStorage<string>();
 
-//LocalStorageAPI >> setItem, getItem, clearItem, clear
+interface LocalStorageStorage<T> {
+  [key: string]: T;
+}
 
-interface LocalStorageAPI {}
+//LocalStorageAPI >> setItem, getItem, clearItem, clear
+interface LocalStorageAPI<T> {
+  setItem(key: string, value: T): void;
+
+  getItem(key: string): T;
+
+  clearItem(key: string): void;
+
+  clear(): void;
+}
 
 // GeolocationAPI >> getCurrentPosition, watchPosition, clearWatch
-interface GeolocationAPI {}
+interface GeolocationAPI<T> {
+  getCurrentPosition(success: T, error?: T, options?: T): string;
+
+  watchPosition(success: T, error?: T, options?: T): string;
+
+  clearWatch(id: string): void;
+}
+
+class LocalStorageAPI<T> implements LocalStorageAPI<T> {
+  private storage: LocalStorageStorage<T> = {};
+
+  setItem(key: string, value: T): void {
+    if (this.storage[key] === undefined) {
+      this.storage[key] = value;
+    }
+  }
+
+  getItem(key: string) {
+    return this.storage[key];
+  }
+
+  clearItem(key: string): void {
+    delete this.storage[key];
+  }
+
+  clear(): void {
+    this.storage = {};
+  }
+}
+
+class GeolocationAPI<T> implements GeolocationAPI<T> {
+  getCurrentPosition(
+    success: T,
+    error?: T | undefined,
+    options?: T | undefined
+  ): string {
+    return "test";
+  }
+
+  watchPosition(
+    success: T,
+    error?: T | undefined,
+    options?: T | undefined
+  ): string {
+    return "test";
+  }
+
+  clearWatch(id: string): void {}
+}
