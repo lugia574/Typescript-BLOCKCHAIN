@@ -226,3 +226,13 @@ class Geolocator implements GeolocationAPI {
   clearWatch = (id: number) => {};
 }
 ```
+
+흠 먼가 존나 나랑 다르네
+
+솔직히 지금 내가 JS 기초 지식이 너무 부족한듯
+
+애초에 이걸 들을 수준이 안됐음
+
+객체 지향도 제대로 구현을 못하는데
+
+자바로도 제대로 못하자너
