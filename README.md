@@ -29,3 +29,7 @@ a.hello();
 ⭐ Typescript
 
 └ 타입 안정성 → 버그 감소
+
+## 타입스크립트 기본
+
+[출처](https://poiemaweb.com/typescript-introduction)
